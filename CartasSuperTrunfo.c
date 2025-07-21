@@ -1,22 +1,47 @@
 #include <stdio.h>
+#include <string.h>
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
+#define MAX_CARTAS 5
+
+typedef struct {
+    char nome[50];
+    int populacao;
+    int area;
+    int pib;
+} Carta;
+
+void cadastrarCartas(Carta cartas[], int *total) {
+    for (int i = 0; i < MAX_CARTAS; i++) {
+        printf("\nCadastro da carta %d\n", i + 1);
+        printf("Nome do país: ");
+        scanf(" %[^\n]", cartas[i].nome);
+        printf("População (milhões): ");
+        scanf("%d", &cartas[i].populacao);
+        printf("Área (km²): ");
+        scanf("%d", &cartas[i].area);
+        printf("PIB (em bilhões): ");
+        scanf("%d", &cartas[i].pib);
+    }
+    *total = MAX_CARTAS;
+}
+
+void exibirCartas(Carta cartas[], int total) {
+    printf("\nCartas cadastradas:\n");
+    for (int i = 0; i < total; i++) {
+        printf("\nCarta %d:\n", i + 1);
+        printf("País: %s\n", cartas[i].nome);
+        printf("População: %d milhões\n", cartas[i].populacao);
+        printf("Área: %d km²\n", cartas[i].area);
+        printf("PIB: %d bilhões\n", cartas[i].pib);
+    }
+}
 
 int main() {
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
-    
-    // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
-    
-    // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+    Carta cartas[MAX_CARTAS];
+    int totalCartas = 0;
+
+    cadastrarCartas(cartas, &totalCartas);
+    exibirCartas(cartas, totalCartas);
 
     return 0;
 }
