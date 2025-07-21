@@ -1,40 +1,47 @@
-# 🃏 Desafio Super Trunfo - Países
+#include <stdio.h>
+#include <string.h>
 
-Este projeto faz parte do desafio **"Super Trunfo – Países"**, cujo objetivo é criar um sistema em linguagem C para cadastro e exibição de cartas com atributos de países, como população, área e PIB.
+#define MAX_CARTAS 5
 
-## 📌 Funcionalidades
+typedef struct {
+    char nome[50];
+    int populacao;
+    int area;
+    int pib;
+} Carta;
 
-- Cadastro de até 5 cartas com atributos:
-  - Nome do país
-  - População (em milhões)
-  - Área (em km²)
-  - PIB (em bilhões)
-- Exibição de todas as cartas cadastradas
+void cadastrarCartas(Carta cartas[], int *total) {
+    for (int i = 0; i < MAX_CARTAS; i++) {
+        printf("\nCadastro da carta %d\n", i + 1);
+        printf("Nome do país: ");
+        scanf(" %[^\n]", cartas[i].nome);
+        printf("População (milhões): ");
+        scanf("%d", &cartas[i].populacao);
+        printf("Área (km²): ");
+        scanf("%d", &cartas[i].area);
+        printf("PIB (em bilhões): ");
+        scanf("%d", &cartas[i].pib);
+    }
+    *total = MAX_CARTAS;
+}
 
-## 🛠️ Tecnologias utilizadas
+void exibirCartas(Carta cartas[], int total) {
+    printf("\nCartas cadastradas:\n");
+    for (int i = 0; i < total; i++) {
+        printf("\nCarta %d:\n", i + 1);
+        printf("País: %s\n", cartas[i].nome);
+        printf("População: %d milhões\n", cartas[i].populacao);
+        printf("Área: %d km²\n", cartas[i].area);
+        printf("PIB: %d bilhões\n", cartas[i].pib);
+    }
+}
 
-- Linguagem C
-- Compilador GCC
-- Terminal/Prompt de comando
+int main() {
+    Carta cartas[MAX_CARTAS];
+    int totalCartas = 0;
 
-## 🚀 Como executar
+    cadastrarCartas(cartas, &totalCartas);
+    exibirCartas(cartas, totalCartas);
 
-1. Compile o programa com o GCC:
-
-```bash
-gcc CartasSuperTrunfo.c -o supertrunfo
-📁 Estrutura dos arquivos
-
-CartasSuperTrunfo.c: Código-fonte principal do programa.
-
-LEIA-ME.md: Arquivo de descrição do projeto.
-
-teste/: Pasta reservada para testes futuros.
-
-
-
----
-
-👤 Autor
-
-Igor Augusto Lucena de Sousa Cruz
+    return 0;
+}
