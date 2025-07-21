@@ -1,22 +1,40 @@
-#include <stdio.h>
+# 🃏 Desafio Super Trunfo - Países
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
+Este projeto faz parte do desafio **"Super Trunfo – Países"**, cujo objetivo é criar um sistema em linguagem C para cadastro e exibição de cartas com atributos de países, como população, área e PIB.
 
-int main() {
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
-    
-    // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
-    
-    // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+## 📌 Funcionalidades
 
-    return 0;
-}
+- Cadastro de até 5 cartas com atributos:
+  - Nome do país
+  - População (em milhões)
+  - Área (em km²)
+  - PIB (em bilhões)
+- Exibição de todas as cartas cadastradas
+
+## 🛠️ Tecnologias utilizadas
+
+- Linguagem C
+- Compilador GCC
+- Terminal/Prompt de comando
+
+## 🚀 Como executar
+
+1. Compile o programa com o GCC:
+
+```bash
+gcc CartasSuperTrunfo.c -o supertrunfo
+📁 Estrutura dos arquivos
+
+CartasSuperTrunfo.c: Código-fonte principal do programa.
+
+LEIA-ME.md: Arquivo de descrição do projeto.
+
+teste/: Pasta reservada para testes futuros.
+
+
+
+---
+
+👤 Autor
+
+Igor Augusto Lucena de Sousa Cruz
